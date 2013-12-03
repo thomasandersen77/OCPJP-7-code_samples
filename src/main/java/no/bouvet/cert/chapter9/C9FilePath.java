@@ -9,4 +9,5 @@ package no.bouvet.cert.chapter9;
  */
 public final class C9FilePath {
     public static final String C9PATH = ".\\src\\main\\java\\no\\bouvet\\cert\\chapter9\\";
+    public static final String C9_RESOURCE_PATH = "src\\main\\resources\\chapter9";
 }

@@ -1,0 +1,1 @@
+denne filen er opprettet under resources (da ligger den i classpath)
