@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by thomasa on 04.12.13.
  */
-public class MainInterface {
+public class MainForInterface {
     public static void main(String[] args) {
 
         // Create comparable instances and add the to a list to find
