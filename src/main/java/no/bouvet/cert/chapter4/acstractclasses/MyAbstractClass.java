@@ -5,5 +5,13 @@ package no.bouvet.cert.chapter4.acstractclasses;
  */
 public abstract class MyAbstractClass  {
 
+    public MyAbstractClass() {
+        System.out.println("MyAbstractClass.Constructor");
+    }
+
     public abstract String echo();
+
+    public String sayHello() {
+        return "I am instance of " + this.getClass().getSuperclass().getSimpleName();
+    }
 }
