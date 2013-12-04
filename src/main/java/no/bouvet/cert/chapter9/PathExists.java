@@ -7,7 +7,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_PATH;
 import static no.bouvet.cert.chapter9.C9FilePath.C9_RESOURCE_PATH;
 
 
@@ -21,11 +21,11 @@ import static no.bouvet.cert.chapter9.C9FilePath.C9_RESOURCE_PATH;
 public class PathExists {
 
     public static void main(String[] args) {
-        main2(C9PATH+"PathExists.java");
+        main2(C9_PATH +"PathExists.java");
         main2("D:\\OCA_Java_7_Certification\\");
         main2("D:\\");
         main2(new PathResolver(C9_RESOURCE_PATH).getResourcesPath()+"\\thomas.txt");
-        printPath(new PathResolver(C9PATH+"PathExists.java"));
+        printPath(new PathResolver(C9_PATH +"PathExists.java"));
     }
 
     public static void main2(String... args) {

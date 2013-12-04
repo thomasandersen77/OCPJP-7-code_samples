@@ -16,6 +16,7 @@ public class PathInfo1 {
 
     public static void main(String[] args) {
         // create a Path object by calling static method get() in Paths class
+        //This does not require a file to exist, and it does not create one
         Path path = Paths.get(TESTFILE_TXT);
 
         // retrieve basic information about path

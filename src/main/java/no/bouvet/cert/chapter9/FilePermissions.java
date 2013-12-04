@@ -4,7 +4,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_RESOURCE_PATH;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,8 +17,8 @@ import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
 public class FilePermissions {
 
     public static void main(String[] args) {
-        method("readonly.txt");
-        method(C9PATH+"FilePermissions.java");
+        method(C9_RESOURCE_PATH+"readonly.txt");
+        method(C9_PATH +"FilePermissions.java");
     }
 
     static void method(String... args){

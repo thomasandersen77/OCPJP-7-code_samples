@@ -6,7 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_RESOURCE_PATH;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,9 +18,9 @@ import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
  */
 public class FileCopy {
 
-    private static final String src = C9PATH+"FileCopy.java";
+    private static final String src = C9_PATH +"FileCopy.java";
 //    private static final String des = ".\\src\\main\\java\\no\\bouvet\\cert\\chapter9\\Backup.txt";
-    private static final String des = C9PATH+"Backup.txt";
+    private static final String des = C9_RESOURCE_PATH +"Backup.txt";
 
     public static void main(String[] args) {
         method(src, des);

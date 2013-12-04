@@ -3,7 +3,7 @@ package no.bouvet.cert.chapter9;
 import java.io.IOException;
 import java.nio.file.*;
 
-import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_PATH;
 /**
  * Created with IntelliJ IDEA.
  * User: gaute.lyngstad
@@ -23,7 +23,7 @@ public class KeepAnEye {
 
 
 //        Path path = Paths.get(".\\");
-        Path path = Paths.get(C9PATH);
+        Path path = Paths.get(C9_PATH);
         WatchService watchService = null;
         try{
             // get a watchService based on the path

@@ -2,6 +2,8 @@ package no.bouvet.cert.chapter9;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import static no.bouvet.cert.chapter9.C9FilePath.*;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,9 +13,13 @@ import java.nio.file.Paths;
  * To change this template use File | Settings | File Templates.
  */
 public class PathCompare1 {
+
+    public static final String ABSOLUTE_PATH = "D:\\OCA_Java_7_Certification\\src\\main\\resources\\chapter9\\Test";
+    public static final String RELATIVE_PATH = C9_RESOURCE_PATH + "Test";
+
     public static void main(String[] args) {
-        Path path1 = Paths.get("Test");
-        Path path2 = Paths.get("D:\\OCA_Java_7_Certification\\Test");
+        Path path1 = Paths.get(RELATIVE_PATH);
+        Path path2 = Paths.get(ABSOLUTE_PATH);
         // compare two paths using compareTo() method
         System.out.println(path1);
         System.out.println(path2);

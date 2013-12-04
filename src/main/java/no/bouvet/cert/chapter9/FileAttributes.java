@@ -6,7 +6,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_PATH;
 
 
 /**
@@ -25,7 +25,7 @@ public class FileAttributes {
     public static final String IS_DIRECTORY = "isDirectory";
 
     public static void main(String[] args) {
-        method(C9PATH+"FileAttributes.java");
+        method(C9_PATH +"FileAttributes.java");
     }
 
     public static void method(String... args) {

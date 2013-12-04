@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 
+import static no.bouvet.cert.chapter9.C9FilePath.*;
 
 class MyFileCopyVisitor extends SimpleFileVisitor<Path> {
     private Path source, destination;
@@ -39,10 +40,10 @@ class MyFileCopyVisitor extends SimpleFileVisitor<Path> {
 
 public class FileTreeWalkCopy {
 
-    public static final String USAGE_FILE_TREE_WALK_COPY_SOURCE_PATH_DESTINATION_PATH = "usage: FileTreeWalkCopy <source-path> <destination-path>";
-    public static final String FILES_COPIED_SUCCESSFULLY = "Files copied successfully!";
-    public static final String SRC = "Test";
-    public static final String DEST = "Test2";
+    public static final String ERROR_MESSAGE = "usage: FileTreeWalkCopy <source-path> <destination-path>";
+    public static final String SUCCESSFULL_MESSAGE = "Files copied successfully!";
+    public static final String SRC = C9_RESOURCE_PATH+"Test";
+    public static final String DEST = C9_RESOURCE_PATH+"Test2";
 
 
     public static void main(String[] args) {
@@ -51,14 +52,14 @@ public class FileTreeWalkCopy {
 
     public static void method(String... args) {
         if(args.length!=2){
-               System.out.println(USAGE_FILE_TREE_WALK_COPY_SOURCE_PATH_DESTINATION_PATH);
+               System.out.println(ERROR_MESSAGE);
                System.exit(-1);
         }
         Path pathSource = Paths.get(args[0]);
         Path pathDestination = Paths.get(args[1]);
         try{
             Files.walkFileTree(pathSource,new MyFileCopyVisitor(pathSource,pathDestination));
-            System.out.println(FILES_COPIED_SUCCESSFULLY);
+            System.out.println(SUCCESSFULL_MESSAGE);
         } catch (IOException e) {
             e.printStackTrace();
         }

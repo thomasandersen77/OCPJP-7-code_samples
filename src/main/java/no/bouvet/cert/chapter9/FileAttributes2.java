@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.DosFileAttributes;
 
-import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_PATH;
 
 
 /**
@@ -20,7 +20,7 @@ import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
 public class FileAttributes2 {
 
     public static void main(String[] args) {
-        method(C9PATH+"FileAttributes2.java");
+        method(C9_PATH +"FileAttributes2.java");
     }
 
     public static void method(String... args) {

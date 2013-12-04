@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.*;
 
-import static no.bouvet.cert.chapter9.C9FilePath.C9PATH;
+import static no.bouvet.cert.chapter9.C9FilePath.C9_PATH;
 
 
 /**
@@ -55,7 +55,7 @@ public class FileTreeWalkFind{
 
     public static void main(String[] args) {
         // instead of console!
-        method(C9PATH, PATTERN);
+        method(C9_PATH, PATTERN);
 
         // if using console
 //        method(args);

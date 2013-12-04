@@ -6,6 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Logger;
 
+import static no.bouvet.cert.chapter9.C9FilePath.*;
+
 /**
  * Created with IntelliJ IDEA.
  * User: gaute.lyngstad
@@ -15,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class PathInfo2 {
     private final static Logger LOG = Logger.getLogger(PathInfo2.class.getName());
-    public static final String TEST = ".\\Test";
+    public static final String TEST = C9_RESOURCE_PATH+"Test";
 
     public static void main(String[] args) throws IOException {
         //get a path object with relative path
