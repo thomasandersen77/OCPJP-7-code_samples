@@ -16,6 +16,8 @@ public final class DbConstants {
     public static final String EMAIL = "email";
     public static final String PHONE_NO = "phoneNo";
     public static final String TABLE_CONTACT = "contact";
+    public static final String TABLE_FAMILY_GROUP = "familyGroup";
+    public static final String NICK_NAME = "nickName";
 
 
     private DbConstants(){}

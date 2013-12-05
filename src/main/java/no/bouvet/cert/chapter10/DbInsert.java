@@ -14,15 +14,12 @@ import static no.bouvet.cert.chapter10.DbConstants.*;
  * Time: 14:58
  * To change this template use File | Settings | File Templates.
  */
-public class DbUpdate {
+public class DbInsert {
 
-    private static final String SELECT_STATEMENT = "SELECT * FROM "+TABLE_CONTACT+ " WHERE "+FIRST_NAME+"=\"Michael\"";
+    private static final String SELECT_STATEMENT = "SELECT * FROM "+TABLE_CONTACT;
     private static final String ATTRIBUTES = "id \tfName \tlname \t\tphoneNo";
-    public static final String BEFORE = "Before the update";
-    public static final String AFTER = "After the update";
-    // Before the update
-    // id 	fName 	lname 		phoneNo
-    // 1	Michael	Taylor	michael@abc.com	+919876543210
+    public static final String BEFORE = "Before the insert";
+    public static final String AFTER = "After the insert";
 
     public static void main(String[] args) {
 
@@ -31,7 +28,6 @@ public class DbUpdate {
             Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ResultSet resultSet = statement.executeQuery(SELECT_STATEMENT)){
 
-            // first fetch the date and display it before the update operation
             System.out.println(BEFORE);
             System.out.println(ATTRIBUTES);
 
@@ -43,11 +39,12 @@ public class DbUpdate {
                         +resultSet.getString(PHONE_NO));
             }
 
-            // move to row number 1
-            resultSet.absolute(1);
-            resultSet.updateString(PHONE_NO, "+919976543210");
-            // set the changes in the database by calling updateRow()
-            resultSet.updateRow();
+            resultSet.moveToInsertRow();
+            resultSet.updateString(FIRST_NAME, "John");
+            resultSet.updateString(LAST_NAME, "K.");
+            resultSet.updateString(EMAIL, "john@abc.com");
+            resultSet.updateString(PHONE_NO, "+19753186420");
+            resultSet.insertRow();
 
             System.out.println(AFTER);
             System.out.println(ATTRIBUTES);
@@ -60,13 +57,6 @@ public class DbUpdate {
                         + resultSet.getString(EMAIL)+ "\t"
                         +resultSet.getString(PHONE_NO));
             }
-
-            //reset back
-            resultSet.absolute(1);
-            resultSet.updateString(PHONE_NO, "+919876543210");
-            resultSet.updateRow();
-
-
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(-1);
