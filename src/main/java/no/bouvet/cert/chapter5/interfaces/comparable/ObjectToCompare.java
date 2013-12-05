@@ -1,4 +1,4 @@
-package no.bouvet.cert.chapter5.interfaces;
+package no.bouvet.cert.chapter5.interfaces.comparable;
 
 /**
  * Simple class that implements the Comparable interface
