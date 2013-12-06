@@ -8,8 +8,8 @@ import java.util.LinkedList;
 /**
  * Created by thomasa on 06.12.13.
  */
-public class Main {
-    private static String message = "\n************ %s ************\n";
+public class DequeExample extends AbstractExample {
+
     /**
      *
      *  <ul>
@@ -32,38 +32,14 @@ public class Main {
         deque.addLast("mark");   // will be last entry
         deque.push("henry"); // top of queue
         deque.forEach(e -> System.out.println((e != null ? "[" + e + "]" : "[** empty **]"))); // lambda -> NOT part of exams, but easy for traversal
-        System.out.printf(message, "END deQueueExample");
+        System.out.printf(getMessage(), "END deQueueExample");
         return deque;
     }
 
-    /**
-     *
-     *     <ul>
-     *      <li>The {@link java.util.Iterator} can only travers or search from the start og the Collection</li>
-     *      <li>{@link java.util.Deque} has {@link java.util.Collection} as it's interface, and can therefor be iterated</li>
-     *      <li>Can also remove elements, but remember to call the .next() method first!</li>
-     *     </ul>
-     *
-     * @param queue
-     */
-    public void iteratorExample(Deque<String> queue) {
-        Iterator<String> iterator = queue.iterator();
-        String str = null;
-        while (iterator.hasNext()) { // if hasNext() == false > terminate loop
-            str = iterator.next(); // returns next element in iteration
-            System.out.println(str);
-        }
 
-        System.out.printf(message, "END iteratorExample");
-    }
 
     public static void main(String[] args) {
-        Main main = new Main();
-        Deque<String> deque = main.deQueueExample();
-
-        main.iteratorExample(deque);
-
-
-
+        DequeExample dequeExample = new DequeExample();
+        dequeExample.deQueueExample();
     }
 }
