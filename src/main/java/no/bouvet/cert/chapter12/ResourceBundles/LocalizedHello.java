@@ -24,8 +24,9 @@ public class LocalizedHello {
     public void resourceBundle(Locale location) throws MissingResourceException {
         if(location!=null)
             Locale.setDefault(location);
+
         Locale currentLocale = Locale.getDefault();
-        ResourceBundle resBundle = ResourceBundle.getBundle("ResourceBundle", currentLocale);
+        ResourceBundle resBundle = ResourceBundle.getBundle("chapter12/ResourceBundle", currentLocale);
         System.out.printf(resBundle.getString("Greeting"));
     }
 
