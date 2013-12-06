@@ -31,7 +31,7 @@ public class DequeExample extends AbstractExample {
         deque.push("gaute");
         deque.addLast("mark");   // will be last entry
         deque.push("henry"); // top of queue
-        deque.forEach(e -> System.out.println((e != null ? "[" + e + "]" : "[** empty **]"))); // lambda -> NOT part of exams, but easy for traversal
+        //deque.forEach(e -> System.out.println((e != null ? "[" + e + "]" : "[** empty **]"))); // lambda -> NOT part of exams, but easy for traversal
         System.out.printf(getMessage(), "END deQueueExample");
         return deque;
     }
