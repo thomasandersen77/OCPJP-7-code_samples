@@ -1,4 +1,4 @@
-package no.bouvet.cert.chapter7;
+package no.bouvet.cert.chapter7.regex;
 
 import java.util.regex.Pattern;
 
