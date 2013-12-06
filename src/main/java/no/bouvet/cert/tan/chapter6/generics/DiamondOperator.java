@@ -12,13 +12,14 @@ public class DiamondOperator {
     public static void main(String[] args) {
         // compiles, but gives a compiler waring
         List<Integer> list = new ArrayList();
-        // list.add(new Double(123));
+        // list.add(new Double(123)); // will not compile
 
         Map<String, Integer> invalidMap = new HashMap();
-        // invalidMap.put(123, "string");
+        // invalidMap.put(123, "string"); // will not compile
 
         // type safe and correct
         List<Integer> typeSafeList = new ArrayList<>();
+        typeSafeList.add(1);
 
 
 

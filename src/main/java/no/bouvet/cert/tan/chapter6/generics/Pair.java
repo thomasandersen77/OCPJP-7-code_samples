@@ -1,6 +1,10 @@
 package no.bouvet.cert.tan.chapter6.generics;
 
 /**
+ * A little weakness, probably because of compiler complexity
+ *
+ * You may add illegal arguments if you leave out the <> operator, but
+ *
  * Created by thomasa on 05.12.13.
  */
 public class Pair<T1, T2> {
@@ -29,8 +33,8 @@ public class Pair<T1, T2> {
     }
 
     public static void main(String[] args) {
-        // OBS!
-        Pair<String, Integer> invalid = new Pair(123, "234");
-        invalid.setObject1("test"); // setter is type safe
+        // OBS! This corner case is important to be aware of
+        Pair<String, Integer> invalid = new Pair(123, "234"); // this is ok
+        String str = invalid.getObject1(); // this will throw a ClassCastException (object1 was an Integer)
     }
 }
