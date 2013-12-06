@@ -14,14 +14,16 @@ public class ClientMain {
         int customerId2 = customerDao.createCustomer(customer2);
         Customer customer3 = new Customer("gaute");
         int customerId3 = customerDao.createCustomer(customer3);
-        Thread.sleep(50);
+        Thread.sleep(150);
         System.out.println("Print all Customers:");
         customerDao.getAllCustomers().forEach(System.err::println);
 
-        System.out.println("Find Customer by name:");
-        Thread.sleep(50);
-        Customer customerByName = customerDao.getCustomerByName("gaute");
-        assert customerByName.getName().equals("gaute");
+        Thread.sleep(150);
+        String name = "gaute";
+        System.out.printf("Find Customer by name: %s\n", name);
+        Thread.sleep(150);
+        Customer customerByName = customerDao.getCustomerByName(name);
+        assert customerByName.getName().equals(name);
         System.err.println(customerByName.toString());
     }
 }
