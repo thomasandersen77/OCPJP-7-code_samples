@@ -34,7 +34,7 @@ public class Pair<T1, T2> {
 
     public static void main(String[] args) {
         // OBS! This corner case is important to be aware of
-        Pair<String, Integer> invalid = new Pair(123, "234"); // this is ok
+        Pair<String, Integer> invalid = new Pair(123, "234"); // this is ok, but wrong according to declaration
         String str = invalid.getObject1(); // this will throw a ClassCastException (object1 was an Integer)
     }
 }
