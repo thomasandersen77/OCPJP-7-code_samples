@@ -8,7 +8,7 @@ Everyone should write there own programs, but if you are stuck, send an message 
 This way all parties learn :)
 
 Feel free to add packages as fit, maybe with:
-    `no.bouvet.cert.chapter6.collections`.[`your_name`]
+    `no.bouvet.cert.tan.chapter6.collections`.[`your_name`]
     
 etc:
 
