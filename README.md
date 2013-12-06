@@ -1,4 +1,4 @@
-OCA_Java_7_Certification
+OCPJP_7_Certification
 ========================
 
 Preperation for the exams with code samples
