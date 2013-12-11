@@ -5,30 +5,21 @@ import java.sql.*;
 /**
  * Created by thomasa on 10.12.13.
  */
-public class JDBCConnectionExample {
+public class ResultSetManipulationExample {
 
-    public static Connection getConnection() throws SQLException {
-        String dataBase = "addressBook";
-        String url = String.format("jdbc:mysql://localhost:3306/%s", dataBase);
-        String user = "root";
-        String password = "pass";
-        return DriverManager.getConnection(url, user, password);
-
-
-    }
 
     public static void main(String[] args) throws SQLException {
 
         //createContact("per","pettersen", "per@pettersen.no", "99444411");
 
-        queryResultSetAndModify();
-        // getAllContacts();
+        //queryResultSetAndModify();
+        getAllContacts();
     }
 
     public static void createContact(String firstName, String lastName, String email, String phoneNumber) throws SQLException {
 
-        try (Statement insert = getConnection().createStatement()){  // Statement & Connection instances closed by try-with-resources
-            boolean result = insert.execute("insert into contact(firstName, lastName, email, phoneNo) values ('"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"')");
+        try (Statement insert = DbConnector.getConnection().createStatement()){  // Statement & Connection instances closed by try-with-resources
+            insert.execute("insert into contact(firstName, lastName, email, phoneNo) values ('"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"')");
             System.out.println("create Contact: firstName = [" + firstName + "], lastName = [" + lastName + "], email = [" + email + "], phoneNumber = [" + phoneNumber + "]");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -41,7 +32,7 @@ public class JDBCConnectionExample {
     public static void getAllContacts() throws SQLException {
         // all three JDBC resource classes are created inside the try-with-resources and will
         // ble closed when exiting the try/catch blocks
-        try(Connection connection = getConnection();
+        try(Connection connection = DbConnector.getConnection();
             Statement stm = connection.createStatement();
             ResultSet resultSet = stm.executeQuery("SELECT * FROM contact")) {
 
@@ -54,14 +45,13 @@ public class JDBCConnectionExample {
     }
 
     public static void queryResultSetAndModify() throws SQLException {
-        // all three JDBC resource classes are created inside the try-with-resources and will
-        // ble closed when exiting the try/catch blocks
         ResultSet resultSet = null;
         ResultSet resultSet2 = null;
         Statement stm = null;
         Connection connection = null;
+        // need to explicitly close the resources
         try {
-            connection = getConnection();
+            connection = DbConnector.getConnection();
             connection.setAutoCommit(false);
             stm = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             resultSet = stm.executeQuery("SELECT * FROM contact");
