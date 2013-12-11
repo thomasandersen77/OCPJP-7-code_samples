@@ -3,6 +3,7 @@ package no.bouvet.cert.tan.chapter6.collections;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.LinkedList;
+import static java.lang.System.out;
 
 /**
  * Created by thomasa on 06.12.13.
@@ -30,8 +31,8 @@ public class DequeExample extends AbstractExample {
         deque.push("gaute");
         deque.addLast("mark");   // will be last entry
         deque.push("henry"); // top of queue
-        //deque.forEach(e -> System.out.println((e != null ? "[" + e + "]" : "[** empty **]"))); // lambda -> NOT part of exams, but easy for traversal
-        System.out.printf(getMessage(), "END deQueueExample");
+        deque.forEach(e -> System.out.println((e != null ? "[" + e + "]" : "[** empty **]"))); // lambda -> NOT part of exams, but easy for traversal
+        out.printf(getMessage(), "END deQueueExample");
         return deque;
     }
 
