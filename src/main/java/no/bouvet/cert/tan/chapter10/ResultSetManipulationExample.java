@@ -61,17 +61,20 @@ public class ResultSetManipulationExample {
             resultSet.updateString("lastName", "olsen");
             resultSet.updateString("email", "anne@broadpark");
             resultSet.updateString("phoneNo", "97541588");
+
             resultSet.insertRow();    // important to actually insert the row
             connection.commit(); // persist since we do not autoCommit in Connection
+
             printResultSet(resultSet);
         } catch (SQLException e1) {
             if(connection != null)
                 connection.rollback(); // rolling back in case SQLException (not necessary because commit statement where never reached)
             e1.printStackTrace();
             throw e1;
-        } finally {
+        } finally { // closing
             if(stm!= null)          stm.close();
             if(resultSet!= null)    resultSet.close();
+            if(connection!= null)   connection.close();
         }
     }
 
