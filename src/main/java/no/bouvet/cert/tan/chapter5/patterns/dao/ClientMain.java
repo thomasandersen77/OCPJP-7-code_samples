@@ -16,7 +16,7 @@ public class ClientMain {
         int customerId3 = customerDao.createCustomer(customer3);
         Thread.sleep(150);
         System.out.println("Print all Customers:");
-        customerDao.getAllCustomers().forEach(System.err::println);
+//        customerDao.getAllCustomers().forEach(System.err::println);
 
         Thread.sleep(150);
         String name = "gaute";

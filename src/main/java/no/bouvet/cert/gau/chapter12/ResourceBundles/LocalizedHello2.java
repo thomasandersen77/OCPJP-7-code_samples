@@ -23,7 +23,9 @@ public class LocalizedHello2 {
         System.out.println(Paths.get(".").toAbsolutePath());
         // print the largest box-office hit movie for default (US) locale
         Locale locale = Locale.getDefault();
+
         printMovieDetails(ResourceBundle.getBundle(LocalizedHello2.class.getPackage().getName()+".ResBundle", locale));
+//        printMovieDetails(ResourceBundle.getBundle("no.bouvet.cert.gau.chapter12.ResourceBundles.ResBundle", locale));
 
         // print the largest box-office hit movie for Italian locale
         locale = new Locale("it", "IT", "");

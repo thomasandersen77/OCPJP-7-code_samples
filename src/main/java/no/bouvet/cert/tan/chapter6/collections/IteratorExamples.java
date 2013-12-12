@@ -43,7 +43,7 @@ public class IteratorExamples extends AbstractExample {
         Collections.sort(namesList);
 
         //easy print - not part of exam
-        namesList.stream().forEach(System.out::println);
+//        namesList.stream().forEach(System.out::println);
 
     }
 
