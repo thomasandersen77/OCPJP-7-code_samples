@@ -14,9 +14,6 @@ public class AsyncThreadingMain {
         AsyncThread a2 = new AsyncThread();
         a1.start();
         a2.start();
-
-
-
     }
 
 }
