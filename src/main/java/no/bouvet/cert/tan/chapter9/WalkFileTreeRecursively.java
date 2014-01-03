@@ -1,7 +1,5 @@
 package no.bouvet.cert.tan.chapter9;
 
-import com.sun.java_cup.internal.runtime.lr_parser;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;

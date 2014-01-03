@@ -1,7 +1,5 @@
 package no.bouvet.cert.tan.chapter8;
 
-import sun.plugin2.jvm.JVMLauncher;
-
 import java.io.*;
 
 /**

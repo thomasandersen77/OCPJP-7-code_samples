@@ -5,7 +5,7 @@ import java.sql.*;
 /**
  * Created by thomasa on 10.12.13.
  */
-public class ResultSetManipulationExample {
+public class ResultSetManipulationExample extends AbstractBase{
 
 
     public static void main(String[] args) throws SQLException {
@@ -37,7 +37,7 @@ public class ResultSetManipulationExample {
             ResultSet resultSet = stm.executeQuery("SELECT * FROM contact")) {
 
 
-            printResultSet(resultSet);
+            printContactResultSet(resultSet);
         } catch (SQLException e1) {
             e1.printStackTrace();
             throw e1;
@@ -46,7 +46,6 @@ public class ResultSetManipulationExample {
 
     public static void queryResultSetAndModify() throws SQLException {
         ResultSet resultSet = null;
-        ResultSet resultSet2 = null;
         Statement stm = null;
         Connection connection = null;
         // need to explicitly close the resources
@@ -65,7 +64,7 @@ public class ResultSetManipulationExample {
             resultSet.insertRow();    // important to actually insert the row
             connection.commit(); // persist since we do not autoCommit in Connection
 
-            printResultSet(resultSet);
+            printContactResultSet(resultSet);
         } catch (SQLException e1) {
             if(connection != null)
                 connection.rollback(); // rolling back in case SQLException (not necessary because commit statement where never reached)
@@ -78,16 +77,5 @@ public class ResultSetManipulationExample {
         }
     }
 
-    public static void printResultSet(ResultSet resultSet) throws SQLException {
-        System.out.printf("ID\tfirstName\tlastName\temail\t\t\t\t\t%s %n","phoneNo");
-        System.out.println("*******************************************************************");
-        while (resultSet.next()){
-            System.out.printf("%-2s\t", resultSet.getString(1));
-            System.out.printf("%-10s\t",resultSet.getString("firstName"));
-            System.out.printf("%-10s\t",resultSet.getString(3));
-            System.out.printf("%-20s\t",resultSet.getString("email"));
-            System.out.printf("%-10s\t",resultSet.getString(5));
-            System.out.println();
-        }
-    }
+
 }
