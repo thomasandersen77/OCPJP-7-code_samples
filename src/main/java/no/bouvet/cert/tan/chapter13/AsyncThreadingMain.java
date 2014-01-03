@@ -10,10 +10,10 @@ package no.bouvet.cert.tan.chapter13;
 public class AsyncThreadingMain {
 
     public static void main(String[] args) throws InterruptedException {
-        AsyncThread a1 = new AsyncThread();
-        AsyncThread a2 = new AsyncThread();
-        a1.start();
-        a2.start();
+        AsyncThread a = new AsyncThread();
+        AsyncThread b = new AsyncThread();
+        a.start();
+        b.start();
     }
 
 }
