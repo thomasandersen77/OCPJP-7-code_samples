@@ -17,10 +17,7 @@ public class RaceConditionExampleMain {
         t1.start();
         t2.start();
         t3.start();
-
-
     }
-
 }
 
 class Counter {
@@ -30,7 +27,7 @@ class Counter {
 class UserCounter implements Runnable{
 
     public void increment() {
-        // this avoids race condition / data race
+        // this synchronized avoids race condition / data race
         synchronized (this) {
             Counter.count++;
             System.out.print(Counter.count  + " ");
