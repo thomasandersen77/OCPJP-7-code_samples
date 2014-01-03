@@ -29,7 +29,7 @@ public class Player extends Thread {
                     try {
                         //sleep(500);
                         Ball.class.wait(1000);
-                        System.out.println(currentPlayer + " goes after " + otherPlayer + "'s EXCELLENT shot");
+                        System.out.println(currentPlayer + " wait's");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -39,7 +39,6 @@ public class Player extends Thread {
                 Ball.class.notifyAll();
 
             }
-
         }
 
     }
