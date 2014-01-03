@@ -7,7 +7,7 @@ package no.bouvet.cert.tan.chapter13.tennisgame_wait_notify;
  * Time: 13:41
  * To change this template use File | Settings | File Templates.
  */
-public class Player extends Thread{
+public class Player extends Thread {
     private String currentPlayer;
     private String otherPlayer;
 
