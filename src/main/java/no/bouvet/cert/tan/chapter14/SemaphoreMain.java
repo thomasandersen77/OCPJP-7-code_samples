@@ -14,7 +14,7 @@ public class SemaphoreMain {
 
     public static void main(String[] args) {
 
-        Semaphore machines = new Semaphore(2);
+        Semaphore machines = new Semaphore(5);
 
         new Person("Thomas", machines);
         new Person("Mark", machines);
