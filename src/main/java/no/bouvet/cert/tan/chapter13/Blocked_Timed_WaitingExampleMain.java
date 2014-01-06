@@ -28,10 +28,10 @@ class MyThread extends Thread {
 
     @Override
     public void run() {
-        synchronized (lock) {
+        synchronized (this) {
             try {
                 //wait(); //yields same response output
-                sleep(1000);
+                wait(100);
             } catch (InterruptedException e) {
                 //e.printStackTrace();
             }
