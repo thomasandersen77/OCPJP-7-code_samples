@@ -27,7 +27,7 @@ class Counter {
 class UserCounter implements Runnable{
 
     public void increment() {
-        // this synchronized avoids race condition / data race
+        // this synchronized block avoids race condition / data race
         synchronized (this) {
             Counter.count++;
             System.out.print(Counter.count  + " ");

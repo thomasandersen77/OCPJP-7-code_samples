@@ -29,12 +29,12 @@ public class Player extends Thread {
                     try {
                         //sleep(500);
                         Ball.class.wait(1000);
-                        System.out.println(currentPlayer + " wait's");
+                        System.out.println((currentPlayer + " wait's").toUpperCase());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                Ball.hit(otherPlayer);
+                Ball.hitTo(otherPlayer);
                 Ball.setTurn(otherPlayer);
                 Ball.class.notifyAll();
 

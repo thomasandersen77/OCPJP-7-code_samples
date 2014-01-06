@@ -15,11 +15,7 @@ public class ReadWriteObject {
             oos.writeObject(new Person("thomas", "andersen"));
             Object object = ois.readObject();
             System.out.println(object);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException  e) {
             e.printStackTrace();
         }
     }

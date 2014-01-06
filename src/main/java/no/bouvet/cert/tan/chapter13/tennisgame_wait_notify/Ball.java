@@ -12,7 +12,7 @@ import java.util.Random;
 public class Ball {
     private static String turn;
     static Random random = new Random(31);
-    public static void hit(String otherPlayer) {
+    public static void hitTo(String otherPlayer) {
         try {
             // simulate a delay
             int wait = random.nextInt((10) + 1000);
