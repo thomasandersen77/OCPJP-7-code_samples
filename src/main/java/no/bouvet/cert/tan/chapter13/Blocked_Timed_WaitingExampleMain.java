@@ -21,7 +21,7 @@ public class Blocked_Timed_WaitingExampleMain {
 }
 
 class MyThread extends Thread {
-     private static final Object lock = new Object();
+    private static final Object lock = new Object();
     public MyThread() {
         System.out.println("Started MyThread with name = " + getName());
     }
@@ -31,7 +31,7 @@ class MyThread extends Thread {
         synchronized (lock) {
             try {
                 //wait(); //yields same response output
-                wait(3000);
+                sleep(1000);
             } catch (InterruptedException e) {
                 //e.printStackTrace();
             }
