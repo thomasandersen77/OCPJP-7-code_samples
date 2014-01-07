@@ -1,5 +1,6 @@
 package no.bouvet.cert.tan.chapter12;
 
+import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 import java.util.Set;
@@ -31,5 +32,8 @@ public class DisplayAllCurrencies {
         for(Currency currency : currencies) {
             System.out.printf("%s\t%s\t%s\t%s%n", currency.getSymbol(), currency.getCurrencyCode(), currency.getDisplayName(), currency.getNumericCode());
         }
+
+
+
     }
 }
