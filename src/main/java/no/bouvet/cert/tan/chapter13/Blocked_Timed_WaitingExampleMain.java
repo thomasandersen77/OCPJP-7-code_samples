@@ -31,7 +31,7 @@ class MyThread extends Thread {
         synchronized (this) {
             try {
                 //wait(); //yields same response output
-                wait(100);
+                wait(1000);
             } catch (InterruptedException e) {
                 //e.printStackTrace();
             }
