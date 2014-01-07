@@ -2,6 +2,7 @@ package no.bouvet.cert.tan.chapter12;
 
 import java.util.Currency;
 import java.util.Locale;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,8 +24,12 @@ public class DisplayAllCurrencies {
                     System.out.printf("**** NO CURRENCY FOR LOCALE %s ****************%n", locale);
                 }
             }
-
         }
+        System.out.println("\n\n");
 
+        Set<Currency> currencies = Currency.getAvailableCurrencies();
+        for(Currency currency : currencies) {
+            System.out.printf("%s\t%s\t%s\t%s%n", currency.getSymbol(), currency.getCurrencyCode(), currency.getDisplayName(), currency.getNumericCode());
+        }
     }
 }
