@@ -1,5 +1,8 @@
 package no.bouvet.cert.tan.chapter11.overrideWithDerivedException;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: thomasa
@@ -8,7 +11,7 @@ package no.bouvet.cert.tan.chapter11.overrideWithDerivedException;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class BaseClass {
-    public abstract void testThrow() throws Exception;
+    public abstract void testThrow() throws IOException;
 }
 
 class SubClass extends BaseClass {
@@ -18,7 +21,7 @@ class SubClass extends BaseClass {
      * @throws RuntimeException
      */
     @Override
-    public void testThrow() throws RuntimeException {
+    public void testThrow() throws RuntimeException, IOException/*, SQLException*/ {
         // throw new Exception(); // unhandled exception
     }
 }
