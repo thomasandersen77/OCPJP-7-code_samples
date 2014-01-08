@@ -17,4 +17,9 @@ public class DerivedOverrider extends RuntimePolymorphismBase {
         System.out.println("I come from Derived class");
     }
 
+    @Override
+    public void overrideObject(String object) {
+        System.out.println("First visit derived class");
+        super.overrideObject(object);    //To change body of overridden methods use File | Settings | File Templates.
+    }
 }

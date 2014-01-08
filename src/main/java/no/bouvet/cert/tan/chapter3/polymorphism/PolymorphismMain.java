@@ -15,6 +15,7 @@ public class PolymorphismMain {
 
         RuntimePolymorphismBase base = new DerivedOverrider();
         base.overrideMe();
+        base.overrideObject("test");
 
 
     }

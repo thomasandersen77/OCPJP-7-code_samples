@@ -13,4 +13,8 @@ public class RuntimePolymorphismBase {
         System.out.println("I come from Base class");
     }
 
+    public void overrideObject(String object) {
+        System.out.println("Base overrideObject: " + object);
+    }
+
 }
