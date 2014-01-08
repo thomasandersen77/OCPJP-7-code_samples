@@ -15,12 +15,13 @@ import java.nio.file.Paths;
 public class NonStaticInitBlockWithCheckedException {
 
     private File file;
-    // this block will be merged with constructor at compile time
+    // this block will be merged with constructor at compile time.
+    // therefor all exceptions has to be handled by the constructor or else it will give a compile error
     {
         file = Files.createFile(Paths.get("/temp").toAbsolutePath()).toFile();
     }
     // because the compiler merges the init block, the IOException can be declared thrown here
-    public NonStaticInitBlockWithCheckedException() throws IOException {
+    public NonStaticInitBlockWithCheckedException() throws IOException  {
         if(file.exists()) {
             System.out.println("File exists");
         } else {
