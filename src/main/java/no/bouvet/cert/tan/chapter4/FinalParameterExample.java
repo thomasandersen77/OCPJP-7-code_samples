@@ -9,13 +9,18 @@ package no.bouvet.cert.tan.chapter4;
  */
 public class FinalParameterExample {
     public static void main(String[] args) {
-        FinalObject test = new Test(new FinalObject("test")).getReference();
+        FinalObject test = new Test(new FinalObject("test"), 1).getReference();
+        Test t = new Test(new FinalObject("test2"), 1);
+        t.setValue(4);  // legal
+        t.setValue(5); // legal
         System.out.println(test.getField());
+        System.out.println(t.getValue());
+
     }
 
 }
 
-class FinalObject {
+final class FinalObject {
     private String field;
 
     FinalObject(String field) {
@@ -33,11 +38,22 @@ class FinalObject {
 
 class Test {
     private final FinalObject reference;
-    public Test(final FinalObject reference) {
+    private int value;
+    public Test(final FinalObject reference, final int value) {
         this.reference = reference;
-        this.reference.setField("test2");
-        //reference = new FinalObject("test"); // not legal because reference is final
-        //this.reference = new FinalObject("test3"); // not legal because of final
+        // reference = new FinalObject("test"); // not legal because reference is final
+        // this.reference = new FinalObject("test3"); // not legal because of final
+        this.value = value;
+        // value = value + 1; no
+    }
+
+    int getValue() {
+        return value;
+    }
+
+    public final void setValue(int value) {
+        this.value = value;
+        value = 0;
     }
 
     // cannot be overridden

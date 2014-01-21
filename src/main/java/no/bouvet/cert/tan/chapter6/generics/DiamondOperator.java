@@ -15,7 +15,7 @@ public class DiamondOperator {
         List<Integer> list = new ArrayList();
         // list.add(new Double(123)); // will not compile
 
-        Map<String, Integer> invalidMap = new HashMap<>();
+        Map<String, Integer> invalidMap = new HashMap();
         invalidMap.put("test", 123); // will compile
 
         // type safe and correct
