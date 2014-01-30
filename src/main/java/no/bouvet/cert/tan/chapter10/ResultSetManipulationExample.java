@@ -10,7 +10,7 @@ public class ResultSetManipulationExample extends AbstractBase{
 
     public static void main(String[] args) throws SQLException {
 
-        //createContact("per","pettersen", "per@pettersen.no", "99444411");
+        createContact("per","pettersen", "per@pettersen.no", "99444411");
 
         //queryResultSetAndModify();
         getAllContacts();
@@ -18,9 +18,16 @@ public class ResultSetManipulationExample extends AbstractBase{
 
     public static void createContact(String firstName, String lastName, String email, String phoneNumber) throws SQLException {
 
-        try (Statement insert = DbConnector.getConnection().createStatement()){  // Statement & Connection instances closed by try-with-resources
-            insert.execute("insert into contact(firstName, lastName, email, phoneNo) values ('"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"')");
-            System.out.println("create Contact: firstName = [" + firstName + "], lastName = [" + lastName + "], email = [" + email + "], phoneNumber = [" + phoneNumber + "]");
+        try (PreparedStatement statement = DbConnector.getConnection().prepareStatement(
+                "insert into contact(firstName, lastName, email, phoneNo) values (?,?,?,?)")){  // Statement & Connection instances closed by try-with-resources
+            statement.setString(1, firstName);
+            statement.setString(2, lastName);
+            statement.setString(3, email);
+            statement.setString(4, phoneNumber);
+            int rowsUpdated = statement.executeUpdate();
+            System.out.printf("Rows affected: %d\n", rowsUpdated);
+            if(rowsUpdated > 0)
+                System.out.println("Created Contact: firstName = [" + firstName + "], lastName = [" + lastName + "], email = [" + email + "], phoneNumber = [" + phoneNumber + "]");
         } catch (SQLException e) {
             e.printStackTrace();
             throw e;
