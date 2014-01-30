@@ -21,7 +21,7 @@ public class Normalizer {
         StringBuilder sb = new StringBuilder();
         while (pathIterator.hasNext()) {
             System.out.printf("%s%d [%s]%n",  sb.toString(), index++,pathIterator.next().getFileName());
-            sb.append("\t");
+            sb.append("  ");
         }
 
         //C:\java\certification\OCA Java 7 Certification\src\main\java\no\bouvet\cert\tan\chapter9

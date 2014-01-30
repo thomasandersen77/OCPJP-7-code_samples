@@ -24,7 +24,7 @@ public class FileSystemExamples {
             }
 
             for(WatchEvent<?> event : key.pollEvents()) {
-                System.out.println("Event: "+ event.kind().name());
+                System.out.println("Event: "+ event.kind().name() + ", " + event.context());
             }
             key.reset();
         }

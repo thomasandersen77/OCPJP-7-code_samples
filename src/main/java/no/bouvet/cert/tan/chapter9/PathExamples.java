@@ -20,7 +20,7 @@ public class PathExamples {
         System.out.printf("Path toURI      :\t %s%n", path.toUri());
         System.out.printf("Path absolute   :\t %s%n", path.toAbsolutePath());
 
-        System.out.printf("Path exists     :\t %s%n", Files.exists(path));
+        System.out.printf("Path exists     :\t %s%n", Files.exists(path, LinkOption.NOFOLLOW_LINKS));
         if(Files.exists(path))
             Files.delete(path);
 
@@ -28,10 +28,14 @@ public class PathExamples {
 
         Files.setAttribute(path, "dos:hidden", true, LinkOption.NOFOLLOW_LINKS);  // will not be visible in dos
         BasicFileAttributes fileAttributes = Files.readAttributes(path, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
-        System.out.println(fileAttributes);
+        System.out.printf("CreationTime: %s%n",fileAttributes.creationTime().toString());
 
+        System.out.printf("Path relativize  :\t%s%n", path.relativize(Paths.get("certification\\OCPJP_Java_7_Certification")));
         System.out.printf("Path normalize   :\t%s%n", path.normalize());
         System.out.printf("Path realPath    :\t  %s%n", path.toRealPath(LinkOption.NOFOLLOW_LINKS));
+
+        System.out.printf("isFile: %s, isExecutable: %s, isReadable: %s, isWritable: %s%n", !Files.isDirectory(path), Files.isExecutable(path), Files.isReadable(path), Files.isWritable(path));
+
         Files.delete(path);
     }
 }
