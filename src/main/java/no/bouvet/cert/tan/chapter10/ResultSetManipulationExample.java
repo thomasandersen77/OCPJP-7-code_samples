@@ -10,10 +10,25 @@ public class ResultSetManipulationExample extends AbstractBase{
 
     public static void main(String[] args) throws SQLException {
 
-        createContact("per","pettersen", "per@pettersen.no", "99444411");
-
+        //createContact("per","pettersen", "per@pettersen.no", "99444411");
+        displayMetaData();
         //queryResultSetAndModify();
         getAllContacts();
+    }
+
+
+    public static void displayMetaData(){
+
+        try(Connection c = DbConnector.getConnection()) {
+            DatabaseMetaData metaData = c.getMetaData();
+            System.out.printf("Name: %s\n", metaData.getDatabaseProductName());
+            System.out.printf("Driver: %s, %s\n", metaData.getDriverName(), metaData.getDriverVersion());
+            System.out.printf("maxRowSize: %s\n", metaData.getMaxRowSize());
+            System.out.printf("colInTblMax: %s\n", metaData.getMaxColumnsInTable());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static void createContact(String firstName, String lastName, String email, String phoneNumber) throws SQLException {
