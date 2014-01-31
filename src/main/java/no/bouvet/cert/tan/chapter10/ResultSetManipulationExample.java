@@ -21,10 +21,12 @@ public class ResultSetManipulationExample extends AbstractBase{
 
         try(Connection c = DbConnector.getConnection()) {
             DatabaseMetaData metaData = c.getMetaData();
-            System.out.printf("Name: %s\n", metaData.getDatabaseProductName());
+            System.out.printf("Name: %s, version: %s\n", metaData.getDatabaseProductName(), metaData.getDatabaseProductVersion());
             System.out.printf("Driver: %s, %s\n", metaData.getDriverName(), metaData.getDriverVersion());
             System.out.printf("maxRowSize: %s\n", metaData.getMaxRowSize());
             System.out.printf("colInTblMax: %s\n", metaData.getMaxColumnsInTable());
+            System.out.printf("url: %s\n", metaData.getURL());
+            System.out.printf("user: %s\n", metaData.getUserName());
         } catch (SQLException e) {
             e.printStackTrace();
         }
