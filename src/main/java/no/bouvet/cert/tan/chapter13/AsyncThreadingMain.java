@@ -26,7 +26,7 @@ class AsyncThread extends Thread {
         for(int i = 1; i <= 5; i++) {
             System.out.printf("ThreadName: %s, i=%d%n", getName(), i);
             try {
-                Thread.sleep(50);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

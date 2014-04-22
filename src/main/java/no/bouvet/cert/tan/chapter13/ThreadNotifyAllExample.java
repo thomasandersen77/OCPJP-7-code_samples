@@ -9,8 +9,8 @@ package no.bouvet.cert.tan.chapter13;
  */
 public class ThreadNotifyAllExample {
 
-    public Mumbo mumbo = new Mumbo();
-    public Jumbo jumbo = new Jumbo();
+    final public Mumbo mumbo = new Mumbo();
+    final public Jumbo jumbo = new Jumbo();
 
     class Mumbo {
         public synchronized void doIt() {
@@ -31,7 +31,7 @@ public class ThreadNotifyAllExample {
     public ThreadNotifyAllExample() throws Exception {
 
         jumbo.start();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         synchronized (mumbo) {
             mumbo.notifyAll();
         }

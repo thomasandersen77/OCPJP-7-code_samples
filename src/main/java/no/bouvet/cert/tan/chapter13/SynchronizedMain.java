@@ -8,7 +8,7 @@ package no.bouvet.cert.tan.chapter13;
  * To change this template use File | Settings | File Templates.
  */
 
-class Lock {
+class Lock{
 
 }
 
@@ -23,7 +23,7 @@ public class SynchronizedMain extends Thread {
     public SynchronizedMain() throws InterruptedException {
         synchronized (lock) { // | (this) // (SynchronizedMain.class)
             System.out.println("test");
-            lock.wait();
+            lock.wait(1000);
         }
     }
 

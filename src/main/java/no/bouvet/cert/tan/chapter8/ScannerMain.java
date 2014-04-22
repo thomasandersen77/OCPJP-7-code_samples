@@ -20,7 +20,6 @@ public class ScannerMain {
                 System.out.println(scanner.next());
             }
 
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }

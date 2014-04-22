@@ -9,7 +9,7 @@ import java.io.IOException;
  */
 public class TextFileReader {
     public static void main(String[] args) {
-        try(FileReader fr = new FileReader("C:/temp/test.txt")){
+        try(FileReader fr = new FileReader("C:\\temp\\resources\\test2.txt")){
             int c = 0;
             while((c = fr.read()) != -1) {
                 System.out.print((char)c);

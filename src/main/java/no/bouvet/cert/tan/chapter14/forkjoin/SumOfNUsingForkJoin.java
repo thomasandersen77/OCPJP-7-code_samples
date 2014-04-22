@@ -2,6 +2,7 @@ package no.bouvet.cert.tan.chapter14.forkjoin;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,7 +38,8 @@ public class SumOfNUsingForkJoin {
                 long mid = (from + to) / 2;
                 RecursiveSumOfN firstHalf = new RecursiveSumOfN(from, mid);
                 firstHalf.fork();
-                //System.out.printf("Fork count: %d%n", ++forkCount);
+                // System.out.printf("Fork count: %d%n", ++forkCount);
+
                 RecursiveSumOfN secondHalf = new RecursiveSumOfN(mid+1, to);
                 long resultSecond = secondHalf.compute();
 
@@ -52,11 +54,13 @@ public class SumOfNUsingForkJoin {
         ForkJoinPool pool = new ForkJoinPool(NUM_THREADS);
         long start = System.nanoTime();
         long computedSum = pool.invoke(new RecursiveSumOfN(0, N));
-        System.out.println(System.nanoTime() - start);
+        long nanos = System.nanoTime() - start;
+        System.out.printf("Millis: %d, Nanos: %d%n", TimeUnit.NANOSECONDS.toMillis(nanos), nanos);
         System.out.println(computedSum);
         long start2 = System.nanoTime();
         long computedSum2 = (N * (N +1)) / 2;
-        System.out.println(System.nanoTime() - start2);
+        long nano2 = System.nanoTime() - start2;
+        System.out.printf("Nanos: %d%n", nano2);
         System.out.println(computedSum2);
 
 

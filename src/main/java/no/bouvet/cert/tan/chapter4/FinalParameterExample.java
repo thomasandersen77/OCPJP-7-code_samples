@@ -40,11 +40,10 @@ class Test {
     private final FinalObject reference;
     private int value;
     public Test(final FinalObject reference, final int value) {
+        this.value = value;
         this.reference = reference;
         // reference = new FinalObject("test"); // not legal because reference is final
         // this.reference = new FinalObject("test3"); // not legal because of final
-        this.value = value;
-        // value = value + 1; no
     }
 
     int getValue() {

@@ -1,7 +1,6 @@
 package no.bouvet.cert.tan.chapter6.generics;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by thomasa on 09.12.13.
