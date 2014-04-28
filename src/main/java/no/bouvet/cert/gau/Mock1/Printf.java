@@ -5,7 +5,7 @@ package no.bouvet.cert.gau.Mock1;
  */
 public class Printf {
     public static void main(String[] args) {
-        System.out.printf("%10.4s %n", "hello world");
+        System.out.printf("%20.7s %n", "hello world");
         System.out.printf("%05d",123);
     }
 }
